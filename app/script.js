@@ -46,12 +46,28 @@ class View {
 		}		
 	}
 
+	checkRequired(...inputs){
+		let isRequired = false 
+		inputs.forEach((input) => {
+			if (input.value.trim() == '') {
+				this.showError(input, `${input.id} is required`)
+				isRequired = true
+			} else {
+				this.showSuccess(input)
+			}
+		})
+	}
+
 	bindSubmitForm() {
 		this.form.addEventListener('submit', event => {
 			event.preventDefault()
+			if (!this.checkRequired(this.username, this.email, this.password, this.secondPassword)) {
 			this.checkLength(this.username, 3, 15)
+			this.checkLength(this.password, 6, 15)
 			this.checkEmail(this.email)
-			this.checkPasswordMatch(password, password2)
+			this.checkPasswordMatch(this.password, this.secondPassword)
+				
+			}
 		})
 	}
 }
