@@ -30,10 +30,20 @@ class View {
 		}
 	}
 
+	checkEmail(input) {
+		const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+		if (re.test(input.value.trim())) {
+			this.showSuccess(input)
+		} else {
+			this.showError(input, `Email isn't valid`)
+		}		
+	}
+
 	bindSubmitForm() {
 		this.form.addEventListener('submit', event => {
 			event.preventDefault()
 			this.checkLength(this.username, 3, 15)
+			this.checkEmail(this.email)
 		})
 	}
 }
