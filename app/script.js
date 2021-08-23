@@ -7,6 +7,13 @@ class View {
 		this.secondPassword = document.getElementById('password2')
 		
 	}
+	
+	bindSubmitForm() {
+		this.form.addEventListener('submit', event => {
+			event.preventDefault()
+			this.checkLength(this.username, 3, 15)
+		})
+	}
 }
 
 
@@ -14,6 +21,7 @@ class Controller {
 	constructor(view) {
 		this.view = view
 
+		this.view.bindSubmitForm()		
 	}
 
 }
