@@ -20,6 +20,15 @@ class View {
 		formControl.className = 'form-control success'
 	}
 
+	checkLength(input, min, max) {
+		if (input.value.length < min) {
+			this.showError(input, `${input.id} must be at least ${min} characters`)
+		} else if (input.value.length > max) {
+			this.showError(input, `${input.id} must be less than ${max} characters`)
+		} else {
+			this.showSuccess(input)
+		}
+	}
 
 	bindSubmitForm() {
 		this.form.addEventListener('submit', event => {
