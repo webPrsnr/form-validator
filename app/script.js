@@ -3,7 +3,7 @@ class View {
 		this.form = document.getElementById('form')
 		this.username = document.getElementById('username')
 		this.email = document.getElementById('email')
-		this.password = document.getElementById('passwod')
+		this.password = document.getElementById('password')
 		this.secondPassword = document.getElementById('password2')
 		
 	}
@@ -30,6 +30,13 @@ class View {
 		}
 	}
 
+	checkPasswordMatch(firstInput, secondInput) {
+		if (firstInput.value !== secondInput.value) {
+			this.showError(secondInput, 'Password is wrong')
+		}
+		
+	}
+
 	checkEmail(input) {
 		const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 		if (re.test(input.value.trim())) {
@@ -44,6 +51,7 @@ class View {
 			event.preventDefault()
 			this.checkLength(this.username, 3, 15)
 			this.checkEmail(this.email)
+			this.checkPasswordMatch(password, password2)
 		})
 	}
 }
