@@ -1,5 +1,11 @@
 class View {
-	constructor(){		
+	constructor(){
+		this.form = document.getElementById('form')
+		this.username = document.getElementById('username')
+		this.email = document.getElementById('email')
+		this.password = document.getElementById('passwod')
+		this.secondPassword = document.getElementById('password2')
+		
 	}
 }
 
@@ -7,6 +13,7 @@ class View {
 class Controller {
 	constructor(view) {
 		this.view = view
+
 	}
 
 }
