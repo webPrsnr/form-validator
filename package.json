@@ -1,0 +1,25 @@
+{
+  "name": "form-example",
+  "version": "0.0.1",
+  "description": "form, html, js, form-validator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webPrsnr/simple-todo-app.git"
+  },
+  "keywords": [
+    "form-validator",
+    "js",
+    "html",
+    "css"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/webPrsnr/simple-todo-app/issues"
+  },
+  "homepage": "https://github.com/webPrsnr/simple-todo-app#readme"
+}
