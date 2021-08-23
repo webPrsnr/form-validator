@@ -7,7 +7,20 @@ class View {
 		this.secondPassword = document.getElementById('password2')
 		
 	}
-	
+
+	showError(input, message) {
+		const formControl = input.parentElement
+		formControl.className = 'form-control error'
+		const small = formControl.querySelector('small')
+		small.innerText = message
+	}
+
+	showSuccess(input) {
+		const formControl = input.parentElement
+		formControl.className = 'form-control success'
+	}
+
+
 	bindSubmitForm() {
 		this.form.addEventListener('submit', event => {
 			event.preventDefault()
